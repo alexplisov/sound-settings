@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Setting/Setting.gd" type="Script" id=1]
+
+[node name="Setting" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 271.0
+margin_right = 1024.0
+margin_bottom = 285.0
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_top = 289.0
+margin_right = 1024.0
+margin_bottom = 305.0
+min_value = -24.0
+max_value = 0.0
+
+[node name="CenterContainer" type="HBoxContainer" parent="."]
+margin_top = 309.0
+margin_right = 1024.0
+margin_bottom = 329.0
+alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="Stop" type="Button" parent="CenterContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "Stop"
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="CenterContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CenterContainer/Stop" to="." method="_on_Stop_pressed"]
