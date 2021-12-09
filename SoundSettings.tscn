@@ -119,6 +119,7 @@ bus = "Music"
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "SFX"
+
 [connection signal="value_changed" from="GridContainer/MusicSetting/HSlider" to="GridContainer/MusicSetting" method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="GridContainer/MusicSetting/HBoxContainer/Play" to="GridContainer/MusicSetting" method="_on_Play_pressed"]
 [connection signal="pressed" from="GridContainer/MusicSetting/HBoxContainer/Stop" to="GridContainer/MusicSetting" method="_on_Stop_pressed"]
